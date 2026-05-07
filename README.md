@@ -1,6 +1,3 @@
-
-corrected_readme = '''# API-Pipeline: Дополнение данных товаров с помощью LLM
-
 ## Описание проекта
 
 Скрипт читает структурированные данные товаров из CSV (Sephora) → отправляет текстовые поля (`product_name`, `highlights`, `ingredients`) в LLM (Gemini через OpenRouter) для определения категорий → объединяет результат с исходником и сохраняет в новый CSV.
@@ -43,7 +40,6 @@ corrected_readme = '''# API-Pipeline: Дополнение данных това
    MODEL=google/gemini-2.0-flash-001
    API_URL=https://openrouter.ai/api/v1/chat/completions
    ```
-   > ⚠️ **Важно:** Никогда не коммитьте `.env` в Git. Добавьте его в `.gitignore`.
 
 3. **Подготовьте входные данные:**
    - Файл `product_info_100.csv` должен лежать в корне проекта.
@@ -51,7 +47,7 @@ corrected_readme = '''# API-Pipeline: Дополнение данных това
 
 4. **Запустите скрипт:**
    ```bash
-   python main_fixed.py
+   python main.py
    ```
 
 5. **Результат** появится в файле `output.csv`.
@@ -62,7 +58,7 @@ corrected_readme = '''# API-Pipeline: Дополнение данных това
 .
 ├── .env                  # API-ключи (не коммитить!)
 ├── .gitignore            # Исключения для Git
-├── main_fixed.py         # Исправленный скрипт
+├── main.py         # Исправленный скрипт
 ├── product_info_100.csv  # Исходные данные
 ├── output.csv            # Результат работы
 ├── requirements.txt      # Зависимости
@@ -94,10 +90,3 @@ product_name,brand_name,highlights,ingredients,price_usd,category,subcategory,ke
 
 - `.env` содержит секреты — **не публикуйте его**.
 - При компрометации ключа немедленно отзовите его в [личном кабинете OpenRouter](https://openrouter.ai/keys).
-'''
-
-# Сохраняем обновлённый README
-with open('/mnt/agents/output/README_fixed.md', 'w', encoding='utf-8') as f:
-    f.write(corrected_readme)
-
-print("README обновлён и сохранён в /mnt/agents/output/README_fixed.md")
