@@ -121,7 +121,7 @@ for i in range(0, total_rows, BATCH_SIZE):
             if isinstance(batch_results, list):
                 results.extend(batch_results)
                 success = True
-                print("  Успешно!")
+                print("  Шикарно!")
                 time.sleep(2)
                 break
             else:
