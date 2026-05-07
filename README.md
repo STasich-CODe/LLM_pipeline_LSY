@@ -31,6 +31,7 @@
 
 1. **Установите зависимости:**
    ```bash
+   git clone https://github.com/STasich-CODe/LLM_pipeline_LSY.git
    pip install -r requirements.txt
    ```
 
